@@ -19,13 +19,15 @@ val di = DI {
 
     bind<CoroutineContext>() with provider { Dispatchers.Main }
 
-    val client = HttpClient() {
-        install(ContentNegotiation) {
-            json(Json {
-                prettyPrint = true
-                isLenient = true
-                ignoreUnknownKeys = true
-            })
+    bindSingleton<HttpClient> {
+        HttpClient() {
+            install(ContentNegotiation) {
+                json(Json {
+                    prettyPrint = true
+                    ignoreUnknownKeys = true
+                    coerceInputValues = true
+                })
+            }
         }
     }
 
