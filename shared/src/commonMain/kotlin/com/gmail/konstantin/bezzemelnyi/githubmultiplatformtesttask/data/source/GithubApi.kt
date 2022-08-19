@@ -1,7 +1,7 @@
 package com.gmail.konstantin.bezzemelnyi.githubmultiplatformtesttask.data.source
 
-import com.gmail.konstantin.bezzemelnyi.githubmultiplatformtesttask.model.GitHubRepo
 import com.gmail.konstantin.bezzemelnyi.githubmultiplatformtesttask.base.Response
+import com.gmail.konstantin.bezzemelnyi.githubmultiplatformtesttask.model.GitHubRepo
 import io.ktor.client.*
 import io.ktor.client.call.*
 import io.ktor.client.request.*
