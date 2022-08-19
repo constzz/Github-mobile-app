@@ -7,8 +7,6 @@ import kotlinx.serialization.Serializable
 data class GitHubRepo(
     @SerialName("full_name")
     val name: String,
-    @SerialName("description")
-    val description: String,
     @SerialName("updated_at")
     val lastUpdate: String,
     @SerialName("stargazers_count")
