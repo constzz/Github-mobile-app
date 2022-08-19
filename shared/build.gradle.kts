@@ -46,6 +46,7 @@ kotlin {
                 implementation("dev.icerock.moko:mvvm-livedata:0.13.1") // api mvvm-core, LiveData and extensions
                 implementation("dev.icerock.moko:mvvm-state:0.13.1") // api mvvm-livedata, ResourceState class and extensions
                 implementation("dev.icerock.moko:mvvm-livedata-resources:0.13.1") // api mvvm-core, moko-resources, extensions for LiveData with moko-resources
+                implementation("dev.icerock.moko:kswift-runtime:0.6.0")
 
             }
         }
@@ -78,17 +79,10 @@ kotlin {
             iosSimulatorArm64Main.dependsOn(this)
             dependencies {
                 implementation("io.ktor:ktor-client-darwin:$ktorVersion")
-            }
-            kotlin {
-                // export correct artifact to use all classes of library directly from Swift
-                targets.withType(org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget::class.java).all {
-                    binaries.withType(org.jetbrains.kotlin.gradle.plugin.mpp.Framework::class.java).all {
-                        export("dev.icerock.moko:mvvm-core:0.13.1")
-                        export("dev.icerock.moko:mvvm-livedata:0.13.1")
-                        export("dev.icerock.moko:mvvm-livedata-resources:0.13.1")
-                        export("dev.icerock.moko:mvvm-state:0.13.1")
-                    }
-                }
+                implementation("dev.icerock.moko:mvvm-core:0.13.1")
+                implementation("dev.icerock.moko:mvvm-livedata:0.13.1")
+                implementation("dev.icerock.moko:mvvm-livedata-resources:0.13.1")
+                implementation("dev.icerock.moko:mvvm-state:0.13.1")
             }
         }
         val iosX64Test by getting
