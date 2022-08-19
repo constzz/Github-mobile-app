@@ -8,16 +8,20 @@ import com.gmail.konstantin.bezzemelnyi.githubmultiplatformtesttask.model.GitHub
 import dev.icerock.moko.mvvm.livedata.MutableLiveData
 import dev.icerock.moko.mvvm.livedata.postValue
 import dev.icerock.moko.mvvm.viewmodel.ViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.launch
 import org.kodein.di.instance
 
+@ExperimentalCoroutinesApi
 class GithubListViewModel : ViewModel() {
 
     private val mGetGitHubRepoListUseCase by di.instance<GetGitHubRepoListUseCase>()
 
     val getGitHubRepoListLiveData = MutableLiveData<GetGitHubRepoListState>(LoadingGetGitHubRepoListState())
 
-    fun getGithubRepoList(username: String) {
+
+    @Throws(Exception::class)
+    suspend fun getGithubRepoList(username: String) {
         viewModelScope.launch {
 
             getGitHubRepoListLiveData.postValue(LoadingGetGitHubRepoListState())
