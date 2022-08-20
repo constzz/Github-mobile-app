@@ -58,14 +58,6 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation("io.ktor:ktor-client-android:$ktorVersion")
-                implementation("dev.icerock.moko:mvvm-flow-compose:0.13.1") // api mvvm-flow, binding extensions for Jetpack Compose (jvm, js, android)
-                implementation("dev.icerock.moko:mvvm-livedata-compose:0.13.1") // api mvvm-livedata, binding extensions for Jetpack Compose (jvm, js, android)
-                implementation("dev.icerock.moko:mvvm-livedata-material:0.13.1") // api mvvm-livedata, Material library android extensions
-                implementation("dev.icerock.moko:mvvm-livedata-glide:0.13.1") // api mvvm-livedata, Glide library android extensions
-                implementation("dev.icerock.moko:mvvm-livedata-swiperefresh:0.13.1") // api mvvm-livedata, SwipeRefreshLayout library android extensions
-                implementation("dev.icerock.moko:mvvm-databinding:0.13.1") // api mvvm-livedata, DataBinding support for Android
-                implementation("dev.icerock.moko:mvvm-viewbinding:0.13.1") // api mvvm-livedata, ViewBinding support for Android
-
             }
         }
         val androidTest by getting
