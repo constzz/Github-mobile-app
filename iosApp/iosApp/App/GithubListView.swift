@@ -6,6 +6,11 @@ struct GithubListView: View {
     
     @ObservedObject private var viewModel: GithubListViewModel
     
+    enum DetailsWebViewState {
+        case showm(url: URL)
+        case hidden
+    }
+    
     private var cancellables = Set<AnyCancellable>()
     
     init(viewModel: GithubListViewModel = Self.GithubListViewModel()) {
@@ -33,7 +38,18 @@ struct GithubListView: View {
                     Spacer()
                     Text("\(repo.numberOfStars)")
                     Image(systemName: "star.fill")
+                }.onTapGesture { viewModel.onListItemTap(repo) }
+            }
+            
+        case .showingDetailsView(let URLRequest, let title):
+            NavigationView {
+                VStack {
+                    WebView(request: URLRequest)
                 }
+                .navigationBarTitle(Text(title))
+                .navigationBarItems(leading: Button(
+                    action: { viewModel.onWebViewBackNavigationButtonTap() }
+                ) { Image(systemName: "chevron.left") })
             }
             
         case .error(let errorMessage):
@@ -52,6 +68,7 @@ extension GithubListView {
             case loading
             case success([GitHubRepo])
             case error(_ errorMessage: String)
+            case showingDetailsView(_ urlRequest: URLRequest, _ title: String)
         }
         
         @Published var state: State = .idle
@@ -70,6 +87,20 @@ extension GithubListView {
         func fetchRepositories(for username: String) async {
             do { try await wrapped.getGithubRepoList(username: username) }
             catch { print(error) }
+        }
+        
+        func onListItemTap(_ item: GitHubRepo) {
+            self.state = .showingDetailsView(
+                URLRequest(url: URL(string: item.htmlUrl)!),
+                item.name
+            )
+        }
+        
+        func onWebViewBackNavigationButtonTap() {
+            guard let viewModelState = wrapped.getGitHubRepoListLiveData.value else {
+                return
+            }
+            self.syncStateAndPublishState(viewModelState)
         }
         
         private func observeSharedViewModel(_ sharedViewModel: shared.GithubListViewModel) {

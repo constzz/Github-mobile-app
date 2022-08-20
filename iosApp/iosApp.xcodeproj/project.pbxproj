@@ -12,6 +12,7 @@
 		2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2152FB032600AC8F00CF470E /* iOSApp.swift */; };
 		7555FF83242A565900829871 /* GithubListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7555FF82242A565900829871 /* GithubListView.swift */; };
 		BB7EFDB628B0122B00C224BB /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7EFDB528B0122B00C224BB /* ProgressView.swift */; };
+		BB7EFDB928B14E7100C224BB /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7EFDB828B14E7100C224BB /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,7 @@
 		7555FF82242A565900829871 /* GithubListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubListView.swift; sourceTree = "<group>"; };
 		7555FF8C242A565B00829871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB7EFDB528B0122B00C224BB /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		BB7EFDB828B14E7100C224BB /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				BB7EFDB528B0122B00C224BB /* ProgressView.swift */,
+				BB7EFDB828B14E7100C224BB /* WebView.swift */,
 			);
 			path = CommonUI;
 			sourceTree = "<group>";
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2152FB042600AC8F00CF470E /* iOSApp.swift in Sources */,
+				BB7EFDB928B14E7100C224BB /* WebView.swift in Sources */,
 				7555FF83242A565900829871 /* GithubListView.swift in Sources */,
 				BB7EFDB628B0122B00C224BB /* ProgressView.swift in Sources */,
 			);
