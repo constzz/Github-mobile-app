@@ -10,5 +10,7 @@ data class GitHubRepo(
     @SerialName("updated_at")
     val lastUpdate: String,
     @SerialName("stargazers_count")
-    val numberOfStars: Int
+    val numberOfStars: Int,
+    @SerialName("html_url")
+    val htmlUrl: String
 )
