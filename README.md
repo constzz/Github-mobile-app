@@ -1,10 +1,8 @@
-# GithubMultiplatformTestTask
-
-This is an ultimate test task for **Mobile Developer** role. 
+# Github mobile app
 
 It is a cross-platfrom mobile application. If fetches data from GithubAPI and caches it.
 
-It is built following **Clean Code** principles for Shared module written in Kotlin.
+It is built following **Clean Code** principles for Shared module writen in Kotlin.
 Shared module holds all the bussiness logic.
 
 All the UI is built natively using SwiftUI(for iOS) and Compose(for Android).
