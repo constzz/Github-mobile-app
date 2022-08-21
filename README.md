@@ -13,4 +13,4 @@ Native modules are observing the state of Shared module using shared ViewModels 
 KMM technologies used in project: 
 - Kodein for DI
 - Ktor for Networking
-- Moko MVVM for convenience in creatin shared view models and managing their lifecycle
+- Moko MVVM for convenience in creating shared view models and managing their lifecycle
