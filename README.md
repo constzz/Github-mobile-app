@@ -1,6 +1,6 @@
 # Github mobile app
 
-It is a cross-platfrom mobile application. If fetches data from GithubAPI and caches it.
+It is a cross-platfrom mobile application, which uses GithubAPI.
 
 It is built following **Clean Code** principles for Shared module writen in Kotlin.
 Shared module holds all the bussiness logic.
